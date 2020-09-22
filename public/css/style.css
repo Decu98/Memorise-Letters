@@ -1,0 +1,66 @@
+body{
+    background-color: white;
+    font-family: Arial,x-locale-body,sans-serif;
+}
+
+.outer-clock{
+    background-color: blanchedalmond;
+    width: 250px;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    border: solid;
+}
+
+div.outer-workspace{
+    margin-top: 10px;
+    border-radius: 12px;
+    border: solid;
+    text-align: -webkit-center;
+    background-color: blanchedalmond;
+}
+
+div.single-workspace{
+    display: inline-block;
+    position: relative;
+    border-radius: 12px;
+    margin: 10px;
+    min-width: 450px;
+    width: 18%;
+    border: solid;
+    height: 475px;
+    background: white;
+    
+}
+
+input.input-workspace{
+    margin: 10px;
+    display: block;
+    padding: 0 10px;
+    border-radius: 4px;
+    text-align: center;
+    
+}
+
+.button-workspace{
+    margin: 10px;
+    display: block;
+}
+
+.show-workspace{
+    -webkit-box-align: end;
+    -webkit-box-pack: center;
+    display: block;
+    height: 455px;
+    margin: 10px;
+}
+
+.sent-word {
+    margin: auto;
+    padding: 32% 0px 32% 0px;
+    border-style: inset;
+    background-color: whitesmoke;
+    font-size: 75px;
+    height: 100px;
+}
