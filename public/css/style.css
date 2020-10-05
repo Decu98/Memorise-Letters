@@ -11,6 +11,7 @@ body{
     padding: 10px;
     border-radius: 12px;
     border: solid;
+    margin-bottom: 10px;
 }
 
 div.outer-workspace{
@@ -63,4 +64,10 @@ input.input-workspace{
     background-color: whitesmoke;
     font-size: 75px;
     height: 100px;
+}
+
+.chooseForm {
+    margin: auto;
+    display: table;
+    padding: 10px;
 }
