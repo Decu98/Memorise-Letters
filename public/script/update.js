@@ -5,13 +5,25 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
-async function showQuestion(url){
+async function showQuestion(url,option){
     const newCache = await caches.open('new-cache');
     const response = await newCache.match(url);
     response.json().then(data => {
-        var wordsList = data.japanese;
+        switch(parseInt(option)){
+            case 0:
+                var wordsList = data.hiragana;
+                break;
+            case 1: 
+                var wordsList = data.katakana
+                break;
+            case 2: 
+                var wordsList = data.kanji
+                break;
+
+        }
         var temp = [];
         for(var i = 0; i < 10; i++){
+            
             var getPlace = document.getElementById(`word_${i}`);
             var place = getRandomInt(0, wordsList.length);
             while(temp.includes(place)){
@@ -33,8 +45,20 @@ async function checkAnwser(i){
     const response = await newCache.match('Anwser');
     response.json().then(data => {
             i = i.slice(6);
+            var option = document.getElementById("target").value;
             var anwser = document.getElementById(`input${i}`).value;
-            var anwserList = data.polish
+            switch(parseInt(option)){
+                case 0:
+                    var anwserList = data.polish;
+                    break;
+                case 1: 
+                    var anwserList = data.polish;
+                    break;
+                case 2: 
+                    var anwserList = data.kanji;
+                    break;
+    
+            }
             if(anwser == anwserList[i]){
                 document.getElementById(`word${i}`).style.backgroundColor = "green";
             }else
@@ -44,9 +68,28 @@ async function checkAnwser(i){
 
 function selectTarget(){
     var userChange = document.getElementById("target").value;
+    document.getElementById("main").innerHTML = "";
     switch(parseInt(userChange)){
         case 0:
-            showQuestion('Japanese');
+            //showQuestion('Japanese',0);
+            for(var i = 0; i < 10; i++){ 
+                generateDiv("single-workspace")
+            }
+            showQuestion('Japanese',0);
+            break;
+        case 1:
+            //showQuestion('Japanese',1);
+            for(var i = 0; i < 10; i++){ 
+                generateDiv("single-workspace")
+            }
+            showQuestion('Japanese',1)
+            break;
+        case 2:
+            //showQuestion('Japanese',1);
+            for(var i = 0; i < 10; i++){ 
+                generateDiv("single-workspace")
+            }
+            showQuestion('Japanese',2)
             break;
     }
     for(var i = 0; i < 1000; i++){

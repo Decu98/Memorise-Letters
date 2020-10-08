@@ -20,6 +20,3 @@ function placeClock(){
     place.innerHTML = currentTime();
 }
 
-function showme(){
-    alert('a');
-}
