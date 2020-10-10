@@ -4,28 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="Cache-control" content="public">
     <title>Wordbook</title>
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="/static/css/style.css">
-    <script src="/static/script/clock.js"></script>
     <script src="/static/script/update.js"></script>
     <script src="/static/script/generateSite.js"></script>
-    <script src="/static/script/addCache.js" async></script>
+    <script src="/static/script/addCache.js"></script>
 </head>
 
-<body onload="placeClock();addCache(`Japanese`); addCache(`Anwser`)">
-    <div class="outer-clock">
-        <div class="inner-clock">
-            <h1 id="clock"></h1>
-        </div>
-    </div>
+<body onload="addCache(`Japanese`); addCache(`Anwser`)">
+    <div class="title-div"><h1 class="title-h1">Choose type of memorise cards</h1></div>
     <form class="chooseForm">
-        <select id="target" onchange="selectTarget()">
+        <select id="target"class="select-type" >
             <option value="" disabled selected>Select your option</option>
             <option value="0">Hiragana</option>
             <option value="1">Katakana</option>
             <option value="2">Kanji</option>
+            <option value="99">Charts</option>>
         </select>
+        <a type="button" class="button-timer" onclick="selectTarget()">Select</a>
+        <a type="button" class="button-timer" onclick="countAnwsers()">Complete</a>
     </form> 
+    <div class="timer-div"></div>
     <div class="outer-workspace" id="main"></div>
 </body>
 </html>

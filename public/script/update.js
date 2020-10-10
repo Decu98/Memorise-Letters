@@ -3,7 +3,7 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
-  }
+}
 
 async function showQuestion(url,option){
     const newCache = await caches.open('new-cache');
@@ -91,13 +91,27 @@ function selectTarget(){
             }
             showQuestion('Japanese',2)
             break;
+        case 99:
+            renderCharts();
+            break;
     }
-    for(var i = 0; i < 1000; i++){
-        if(document.getElementById(`word${i}`) == null){
-            i++;
+}
+
+function countAnwsers(){
+    var wordsClass = document.getElementsByClassName("sent-word");
+    var goodAnwser = 0;
+    for(var i = 0; i < wordsClass.length; i++){
+        var color = wordsClass.item(i).style.backgroundColor
+        if(color == "green"){
+            goodAnwser++;
+            if(goodAnwser == 10){
+                alert("Completed")
+            }
         }
         else{
-        document.getElementById(`word${i}`).style.backgroundColor = "whitesmoke";
-        }
+            var badAnwser = 10 - goodAnwser;
+            alert(`There are ${badAnwser} not correct anwser`);
+            return 0;
+        } 
     }
 }

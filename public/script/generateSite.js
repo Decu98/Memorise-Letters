@@ -11,7 +11,7 @@ function insertToDiv(){
     var elements = [
         h1 = document.createElement("h1"),
         input = document.createElement("input"),
-        button = document.createElement("button"),
+        button = document.createElement("a"),
         div = document.createElement("div"),
     ]
     var h1_att = ["class"]
@@ -44,4 +44,16 @@ function insertToDiv(){
         divToPlace.item(i).insertAdjacentElement('beforeend', elements[2]);
         elements[2].setAttribute("id", `button_${i}`);
     }
+}
+
+function renderCharts(){
+    var mainBody = document.getElementById("main");
+    var newImg = [
+        katakana = document.createElement("img"),
+        hiragana =document.createElement("img")
+    ]
+    newImg[0].setAttribute("src","/static/img/katakana.jpg");
+    newImg[1].setAttribute("src","/static/img/hiragana.jpg");
+    mainBody.insertAdjacentElement('beforeend',newImg[0]);
+    mainBody.insertAdjacentElement('beforeend',newImg[1]);
 }

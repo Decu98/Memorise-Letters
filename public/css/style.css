@@ -1,26 +1,18 @@
 body{
     background-color: white;
     font-family: Arial,x-locale-body,sans-serif;
-}
-
-.outer-clock{
-    background-color: blanchedalmond;
-    width: 250px;
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-    border-radius: 12px;
-    border: solid;
-    margin-bottom: 10px;
+    margin: 0px;
 }
 
 div.outer-workspace{
     margin-top: 10px;
     border-radius: 12px;
-    border: solid;
+    border: 1px solid;
     text-align: -webkit-center;
     background-color: blanchedalmond;
+    min-height: 750px;
 }
+
 
 div.single-workspace{
     display: inline-block;
@@ -29,7 +21,7 @@ div.single-workspace{
     margin: 10px;
     min-width: 450px;
     width: 18%;
-    border: solid;
+    border: 1px solid;
     height: 475px;
     background: white;
     
@@ -38,15 +30,27 @@ div.single-workspace{
 input.input-workspace{
     margin: 10px;
     display: block;
-    padding: 0 10px;
     border-radius: 4px;
     text-align: center;
-    
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
 }
 
 .button-workspace{
+    border-radius: 20px;
     margin: 10px;
+    padding: 5px;
+    width: fit-content;
     display: block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid;
+    font-size: 15px;
+}
+
+.button-workspace:hover{
+    background: #ff9966;
+    transition: 100ms;
 }
 
 .show-workspace{
@@ -71,3 +75,39 @@ input.input-workspace{
     display: table;
     padding: 10px;
 }
+
+.button-timer {
+   padding: 5px;
+   border-radius: 20px;
+   border: 1px solid;
+   cursor: pointer;
+   text-align: center;
+   margin: 5px;
+}
+.button-timer:hover {
+    background: #ff9966;
+    transition: 100ms;
+}
+
+
+.select-type {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+:focus {
+    outline: none;
+}
+
+img {
+    background: white;
+    margin: 10px;
+}
+
+.title-div {
+    text-align: center;
+}
+
+
+
