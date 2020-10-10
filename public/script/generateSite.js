@@ -38,11 +38,11 @@ function insertToDiv(){
     var divToPlace = document.getElementsByClassName("show-workspace");
     for(var i = 0; i < divToPlace.length; i++){
         divToPlace.item(i).insertAdjacentElement('beforeend', elements[0]);
-        elements[0].setAttribute("id", `word_${i}`);
+        elements[0].setAttribute("id", `word_` + i);
         divToPlace.item(i).insertAdjacentElement('beforeend', elements[1]);
-        elements[1].setAttribute("id", `input_${i}`);
+        elements[1].setAttribute("id", `input_` + i);
         divToPlace.item(i).insertAdjacentElement('beforeend', elements[2]);
-        elements[2].setAttribute("id", `button_${i}`);
+        elements[2].setAttribute("id", `button_` + i);
     }
 }
 
