@@ -22,7 +22,7 @@ async function showQuestion(url,option){
 
         }
         var temp = [];
-        for(var i = 0; i < 10; i++){
+        for(var i = 0; i < 30; i++){
             
             var getPlace = document.getElementById(`word_${i}`);
             var place = getRandomInt(0, wordsList.length);
@@ -72,21 +72,21 @@ function selectTarget(){
     switch(parseInt(userChange)){
         case 0:
             //showQuestion('Japanese',0);
-            for(var i = 0; i < 10; i++){ 
+            for(var i = 0; i < 30; i++){ 
                 generateDiv("single-workspace")
             }
             showQuestion('Japanese',0);
             break;
         case 1:
             //showQuestion('Japanese',1);
-            for(var i = 0; i < 10; i++){ 
+            for(var i = 0; i < 30; i++){ 
                 generateDiv("single-workspace")
             }
             showQuestion('Japanese',1)
             break;
         case 2:
             //showQuestion('Japanese',1);
-            for(var i = 0; i < 10; i++){ 
+            for(var i = 0; i < 30; i++){ 
                 generateDiv("single-workspace")
             }
             showQuestion('Japanese',2)
