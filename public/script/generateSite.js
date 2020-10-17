@@ -21,11 +21,16 @@ function insertToDiv(){
     }
     var input_att = ["class", "autocomplete", "type"]
     var input_val = ["input-workspace", "off", "text"]
+    elements[1].addEventListener('keypress', function(e){
+        if(e.keyCode == 13){
+            checkEnter(this.id)
+        }
+    });
     for(var i = 0; i < input_att.length; i++){
         elements[1].setAttribute(input_att[i], input_val[i]);
     }
     var button_att = ["class", "onclick"]
-    var button_val = ["button-workspace", `checkAnwser(this.id)`]
+    var button_val = ["button-workspace", `checkAnwser(this.id), console.log(this.id)`]
     for(var i = 0; i < button_att.length; i++){
         elements[2].setAttribute(button_att[i], button_val[i]);
     }
@@ -44,6 +49,11 @@ function insertToDiv(){
         divToPlace.item(i).insertAdjacentElement('beforeend', elements[2]);
         elements[2].setAttribute("id", `button_` + i);
     }
+}
+
+function checkEnter(id){
+    id = "button" + id.slice(5)
+    checkAnwser(id)
 }
 
 function renderCharts(){
