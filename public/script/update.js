@@ -86,7 +86,7 @@ function selectTarget(){
             break;
         case 2:
             //showQuestion('Japanese',1);
-            for(var i = 0; i < 30; i++){ 
+            for(var i = 0; i < 10; i++){ 
                 generateDiv("single-workspace")
             }
             showQuestion('Japanese',2)
