@@ -8,20 +8,18 @@
     <script src="/static/script/update.js"></script>
     <script src="/static/script/generateSite.js"></script>
     <script src="/static/script/addCache.js"></script>
+    <script src="/static/script/eventHandeler.js"></script>
 </head>
 
-<body onload="addCache(`Japanese`); addCache(`Anwser`)">
-    <div class="title-div"><h1 class="title-h1">Choose type of memorise cards</h1></div>
-    <form class="chooseForm">
-        <select id="target"class="select-type" >
-            <option value="" disabled selected>Select your option</option>
-            <option value="0">Hiragana</option>
-            <option value="1">Katakana</option>
-            <option value="2">Kanji</option>
-            <option value="99">Charts</option>>
-        </select>
-        <a type="button" class="button-timer" onclick="selectTarget()">Select</a>
-        <a type="button" class="button-timer" onclick="countAnwsers()">Complete</a>
+<body onload="addCache(`Japanese`); addCache(`Anwser`), eventController()">
+    <header class="menuHeader">
+        <div class="headerLogo">LOGOPLACEHOLDER</div>
+        <div class="headerHiragana">Hiragana</div>
+        <div class="headerKatakana" value="1">Katakana</div>
+        <div class="headerKanji">Kanji</div>
+        <div class="headerChart">Chart</div>
+    </header>
+    <div class="title-div"><h1 class="title-h1">Memorize 日本語</h1></div>
     </form> 
     <div class="timer-div"></div>
     <div class="outer-workspace" id="main"></div>

@@ -1,6 +1,6 @@
 body{
     background-color: white;
-    font-family: Arial,x-locale-body,sans-serif;
+    font-family: Helvetica,Arial,sans-serif;
     margin: 0px;
 }
 
@@ -9,7 +9,7 @@ div.outer-workspace{
     border-radius: 12px;
     border: 1px solid;
     text-align: -webkit-center;
-    background-color: blanchedalmond;
+    background-color: #c8e1ff;
     min-height: 750px;
 }
 
@@ -49,7 +49,7 @@ input.input-workspace{
 }
 
 .button-workspace:hover{
-    background: #ff9966;
+    background: #c8e1ff;
     transition: 100ms;
 }
 
@@ -70,35 +70,6 @@ input.input-workspace{
     height: 100px;
 }
 
-.chooseForm {
-    margin: auto;
-    display: table;
-    padding: 10px;
-}
-
-.button-timer {
-   padding: 5px;
-   border-radius: 20px;
-   border: 1px solid;
-   cursor: pointer;
-   text-align: center;
-   margin: 5px;
-}
-.button-timer:hover {
-    background: #ff9966;
-    transition: 100ms;
-}
-
-
-.select-type {
-    margin: 10px;
-    padding: 5px;
-    border-radius: 20px;
-}
-
-:focus {
-    outline: none;
-}
 
 img {
     background: white;
@@ -109,5 +80,22 @@ img {
     text-align: center;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(70, 73, 122);
+    height: 20px;
+    padding: 15px;
+}
+
+.headerLogo, .headerHiragana, .headerKatakana, .headerKanji, .headerChart {
+    color: white; 
+    height: 100%;
+    padding: 15px; 
+}
+.headerLogo:hover, .headerHiragana:hover, .headerKatakana:hover, .headerKanji:hover, .headerChart:hover {
+    cursor: pointer;
+    background-color: rgb(51, 53, 88);
+}
 
 

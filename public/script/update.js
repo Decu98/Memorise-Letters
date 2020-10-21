@@ -1,4 +1,4 @@
-
+var globalChoese = 0;
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -22,7 +22,7 @@ async function showQuestion(url,option){
 
         }
         var temp = [];
-        for(var i = 0; i < 30; i++){
+        for(var i = 0; i < wordsList.length-1; i++){
             
             var getPlace = document.getElementById(`word_${i}`);
             var place = getRandomInt(0, wordsList.length);
@@ -45,7 +45,7 @@ async function checkAnwser(i){
     const response = await newCache.match('Anwser');
     response.json().then(data => {
             i = i.slice(6);
-            var option = document.getElementById("target").value;
+            var option = globalChoese;
             var anwser = document.getElementById(`input${i}`).value;
             switch(parseInt(option)){
                 case 0:
@@ -60,58 +60,40 @@ async function checkAnwser(i){
     
             }
             if(anwser == anwserList[i]){
-                document.getElementById(`word${i}`).style.backgroundColor = "green";
+                document.getElementById(`word${i}`).style.backgroundColor = "rgba(0, 128, 0, 0.3)";
             }else
-                document.getElementById(`word${i}`).style.backgroundColor = "red" 
+                document.getElementById(`word${i}`).style.backgroundColor = "rgba(128, 0, 0, 0.3)" 
       });
 }
 
-function selectTarget(){
-    var userChange = document.getElementById("target").value;
+function generateHiragana(){
     document.getElementById("main").innerHTML = "";
-    switch(parseInt(userChange)){
-        case 0:
-            //showQuestion('Japanese',0);
-            for(var i = 0; i < 30; i++){ 
-                generateDiv("single-workspace")
-            }
-            showQuestion('Japanese',0);
-            break;
-        case 1:
-            //showQuestion('Japanese',1);
-            for(var i = 0; i < 30; i++){ 
-                generateDiv("single-workspace")
-            }
-            showQuestion('Japanese',1)
-            break;
-        case 2:
-            //showQuestion('Japanese',1);
-            for(var i = 0; i < 10; i++){ 
-                generateDiv("single-workspace")
-            }
-            showQuestion('Japanese',2)
-            break;
-        case 99:
-            renderCharts();
-            break;
+    for(var i = 0; i < 45; i++){ 
+        generateDiv("single-workspace")
     }
+    globalChoese = 0;
+    showQuestion('Japanese',0);
 }
 
-function countAnwsers(){
-    var wordsClass = document.getElementsByClassName("sent-word");
-    var goodAnwser = 0;
-    for(var i = 0; i < wordsClass.length; i++){
-        var color = wordsClass.item(i).style.backgroundColor
-        if(color == "green"){
-            goodAnwser++;
-            if(goodAnwser == 10){
-                alert("Completed")
-            }
-        }
-        else{
-            var badAnwser = 10 - goodAnwser;
-            alert(`There are ${badAnwser} not correct anwser`);
-            return 0;
-        } 
+function generateKatakana(){
+    document.getElementById("main").innerHTML = "";
+    for(var i = 0; i < 45; i++){ 
+        generateDiv("single-workspace")
     }
+    globalChoese = 1;
+    showQuestion('Japanese',1);
+}
+
+function generateKanji(){
+    document.getElementById("main").innerHTML = "";
+    for(var i = 0; i < 10; i++){ 
+        generateDiv("single-workspace")
+    }
+    globalChoese = 2;
+    showQuestion('Japanese',2)
+}
+
+function generateChart(){
+    document.getElementById("main").innerHTML = "";
+    renderCharts();
 }
