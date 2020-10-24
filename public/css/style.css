@@ -4,6 +4,11 @@ body{
     margin: 0px;
 }
 
+.notActive {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 div.outer-workspace{
     margin-top: 10px;
     border-radius: 12px;
@@ -71,9 +76,14 @@ input.input-workspace{
 }
 
 
-img {
+img.chart {
     background: white;
     margin: 10px;
+}
+
+img.headerLogo {
+    padding: 0px 15px 0px 15px;
+    height: 50px;
 }
 
 .title-div {
@@ -88,7 +98,7 @@ header {
     padding: 15px;
 }
 
-.headerLogo, .headerHiragana, .headerKatakana, .headerKanji, .headerChart {
+.headerHiragana, .headerKatakana, .headerKanji, .headerChart {
     color: white; 
     height: 100%;
     padding: 15px; 
@@ -97,5 +107,6 @@ header {
     cursor: pointer;
     background-color: rgb(51, 53, 88);
 }
+
 
 

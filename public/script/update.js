@@ -1,4 +1,5 @@
 var globalChoese = 0;
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -6,6 +7,10 @@ function getRandomInt(min, max) {
 }
 
 async function showQuestion(url,option){
+    var resetColor = document.getElementsByClassName("sent-word")
+    for(var i = 0; i < resetColor.length; i++){
+        resetColor.item(i).style.backgroundColor = "white"
+    }
     const newCache = await caches.open('new-cache');
     const response = await newCache.match(url);
     response.json().then(data => {
@@ -32,12 +37,17 @@ async function showQuestion(url,option){
             temp.push(place)
             var getButton = document.getElementById(`button_${i}`);
             var getInput = document.getElementById(`input_${i}`);
-            getPlace.innerText = wordsList[place];
-            getPlace.id = `word${place}`;
-            getInput.id = `input${place}`
-            getButton.id = `button${place}`
+            if(getPlace == null){
+                return 0;
+            }else{
+                getPlace.innerText = wordsList[place];
+                getPlace.id = `word${place}`;
+                getInput.id = `input${place}`
+                getButton.id = `button${place}`
+            }
         }
     })
+
 }
 
 async function checkAnwser(i){
@@ -67,33 +77,29 @@ async function checkAnwser(i){
 }
 
 function generateHiragana(){
-    document.getElementById("main").innerHTML = "";
-    for(var i = 0; i < 45; i++){ 
-        generateDiv("single-workspace")
-    }
     globalChoese = 0;
     showQuestion('Japanese',0);
 }
 
 function generateKatakana(){
-    document.getElementById("main").innerHTML = "";
-    for(var i = 0; i < 45; i++){ 
-        generateDiv("single-workspace")
-    }
     globalChoese = 1;
     showQuestion('Japanese',1);
 }
 
 function generateKanji(){
-    document.getElementById("main").innerHTML = "";
-    for(var i = 0; i < 10; i++){ 
-        generateDiv("single-workspace")
-    }
     globalChoese = 2;
     showQuestion('Japanese',2)
 }
 
 function generateChart(){
-    document.getElementById("main").innerHTML = "";
     renderCharts();
+}
+
+function betterOpt(){
+    for(var i = 0; i < 10; i++){ 
+        generateDiv("single-workspace")
+    }
+    eventController()
+    addCache(`Japanese`);
+    addCache(`Anwser`);
 }
